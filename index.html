@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Poker (Demo)</title>
+  <style>
+    body { font-family: Arial; text-align: center; background: #0b3d2e; color: white; }
+    button { padding: 10px 20px; font-size: 16px; }
+    .card { display: inline-block; margin: 10px; font-size: 24px; }
+  </style>
+</head>
+<body>
+
+<h1>🃏 Mini Poker (Play money)</h1>
+
+<div id="cards"></div>
+<br>
+<button onclick="deal()">Карт тараах</button>
+
+<script>
+const deck = ["A♠","K♠","Q♠","J♠","10♠","A♥","K♥","Q♥","J♥","10♥"];
+
+function deal() {
+  let hand = [];
+  for (let i = 0; i < 2; i++) {
+    hand.push(deck[Math.floor(Math.random() * deck.length)]);
+  }
+  document.getElementById("cards").innerHTML =
+    `<div class="card">${hand[0]}</div><div class="card">${hand[1]}</div>`;
+}
+</script>
+
+</body>
+</html>
